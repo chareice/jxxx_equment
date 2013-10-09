@@ -1,0 +1,140 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="row search">
+	<div class="span12">
+		<form id="search-form">
+			<div class="input-prepend">
+  	    		<span class="add-on"><i class="icon-search"></i></span>
+  	    		<input class="span2" id="search_word" type="text" name="search_word" data-placeholder="设备序列号">
+  	  		</div>
+		</form>
+	</div>
+</div>
+<div class="row search-result">
+	<div class="span12 well">
+		<div class="close"><i class="icon-remove"></i></div>
+		<ul id="search-result">
+		</ul>
+	</div>
+</div>
+<div class="row show">
+	<div class="well span3" id="equ_cata_container">
+		<header class="nav-header">
+			设备分类
+		</header>
+		<ul class="nav nav-list nav-stacked" id="equ_cata">
+		{% for cata in cataList %}
+        	<li data-id="{{ cata.id }}"><a>{{ cata.name }}</a></li>
+        {% endfor %}
+		</ul>
+	</div>
+
+	<div class="well span4" id="equ_class_container">
+		<header class="nav-header">
+			设备型号
+		</header>
+		<ul class="nav nav-list nav-stacked" id="equ_class">
+
+		</ul>
+	</div>
+
+	<div class="well span4" id="equ_instance_container">
+		<header class="nav-header">
+			该型号设备
+		</header>
+		<ul class="nav nav-list nav-stacked" id="equ_instance">
+
+		</ul>
+	</div>
+</div>
+
+<div class="row" id="show_detail">
+	<div class="span12 well show_detail">
+		<header class="clearfix">
+			<h3 class="title">设备详情</h3>
+			<div class="close"><i class="icon-remove"></i></div>
+		</header>
+		<div class="onmaintain alert alert-error">
+				设备维修中！
+		</div>
+		<div class="isscrap alert alert-error">
+				设备已报废！
+		</div>
+		<div class="detail_container">
+			<table id="detail" class="table table-bordered">
+			<input type="hidden" id="detial_id"/>
+				<thead>
+					<tr>
+						<td>设备分类</td>
+						<td>设备型号</td>
+						<td>编码</td>
+						<td>序列号</td>
+						<td>购入(调拨)时间</td>
+						<td>安装(存放)地点</td>
+						<td>单价</td>
+						<td>管理人</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td><span data-place="devcata"></span></td>
+						<td><span data-place="devtype"></span></td>
+						<td><span data-place="code"></span></td>
+						<td><span data-place="serial"></span></td>
+						<td><span data-place="addtime"></span></td>
+						<td><span data-place="place"></span></td>
+						<td><span data-place="price"></span></td>
+						<td><span data-place="manager"></span></td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div class="detail_log" id="scrap_log">
+				<header>
+					<h6>报废信息</h6>
+				</header>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<td>报废时间</td>
+							<td>服务年限</td>
+							<td>残值</td>
+							<td>审批人</td>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="detail_log" id="detail_log">
+				<header>
+					<h6>维修记录</h6>
+				</header>
+				<input type="hidden" id="maintain_id"/>
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<td>送修时间</td>
+							<td>维修部位</td>
+							<td>维修价格</td>
+							<td>是否在保修范围内</td>
+							<td>返回时间</td>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<footer id="login-info" class="well">
+	<div class="close"><i class="icon-remove"></i></div>
+	<p>欢迎您：{{current_user.first_name}}</p>
+	<p>上一次登陆时间：{{current_user.last_login}}</p>
+</footer>
+
+{% endblock %}

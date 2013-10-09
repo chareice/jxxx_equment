@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block body %}
+<form class="form-horizontal" method="POST" action="{% url 'device:edituser' user.id %}">
+  {% csrf_token %}
+  {% if message.success %}
+  <div class="alert alert-success">
+  修改成功！
+  </div>
+  {% endif %}
+  <fieldset>
+      <legend>修改用户信息</legend>
+      <div class="control-group">
+        <label class="control-label" for="user_account">用户账号</label>
+        <div class="controls">
+          <input type="text" id="user_account" placeholder="用户账号" name="account" value="{% if user %}{{ user.username }}{% endif %}">
+        </div>
+      </div>
+
+	  <div class="control-group">
+        <label class="control-label" for="user_firstname">姓名</label>
+        <div class="controls">
+          <input type="text" id="user_firstname" placeholder="姓名" name="first_name"  value="{% if user %}{{ user.first_name }}{% endif %}">
+        </div>
+      </div>
+
+    <div class="control-group">
+      <label class="control-label" >用户组</label>
+     <div class="controls">
+          <select name="group">
+            {% for group in groups %}
+              <option value="{{ group.id }}"{% ifequal user.groups.all.0.id group.id %}selected{% endifequal %}>{%ifequal group.name "superadmin" %}
+        超级管理员
+      {% endifequal %}
+      {%ifequal group.name "admin" %}
+        管理员
+      {% endifequal %}
+      {%ifequal group.name "user" %}
+        用户
+      {% endifequal %}</option>
+            {% endfor %}
+          </select>
+        </div>
+    </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn">提交</button>
+        </div>
+      </div>
+
+    </fieldset>
+</form>
+{% endblock %}

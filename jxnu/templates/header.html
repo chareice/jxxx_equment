@@ -1,0 +1,42 @@
+<div class="container" style="margin-top:40px;">
+  <div class="row">
+        <div class="span12">
+          <img src="/static/img/top.jpg">
+        </div>
+      </div>
+</div>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="row">
+         <a class="brand span2" href="/">系统首页</a>
+      <div class="nav-collapse collapse">
+        <ul class="nav span10" id="header_nav">
+          {% if perms.device.maintain_device %}
+          <li {% if section == "add"%}class="active" {% endif %} class="dropdown">
+           <a role="button" class="dropdown-toggle" data-toggle="dropdown">添加设备<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url "device:add" "device" %}">添加设备</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url "device:add" "devtype" %}">添加型号</a></li>
+               <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url "device:add" "devcata" %}">添加分类</a></li>
+            </ul>
+          </li>
+          <li {% if section == "maintain"%}class="active" {% endif %}><a href="{% url 'device:maintain'%}">维修设备</a></li>
+          {% endif %}
+          {% if perms.auth.add_user %}
+          <li class="dropdown{% if section == "user"%} active{% endif %}">
+             <a role="button" class="dropdown-toggle" data-toggle="dropdown">用户管理<b class="caret"></b></a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'device:user'%}">用户列表</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url "device:adduser" %}">添加用户</a></li>
+            </ul>
+          </li>
+          {% endif %}
+          <li style="float:right"><a href="{% url 'logout'%}">退出系统</a></li>
+          <li {% if section == "changepassword"%}class="active" {% endif %} style="float:right"><a href="{% url 'device:changepassword'  %}">修改密码</a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

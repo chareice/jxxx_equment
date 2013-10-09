@@ -1,0 +1,130 @@
+.page{
+	margin-top: 40px;
+}
+.action{
+	background: #FEE;
+	border-radius: 10px;
+	div{
+		margin: 0 auto;
+		width: 100px;
+		padding: 100px 0;
+	}
+}
+#equclasslist{
+	margin-top: 10px;
+}
+#equ_class_id{
+	display: none;
+}
+.controls{
+	.tips{
+		line-height: 28px;
+	}
+}
+.show{
+	#equ_cata_container,#equ_class_container,#equ_instance_container{
+		padding: 8px 0px 0px 0px;
+		li{
+			a{
+				cursor: pointer;
+			}
+		}
+		#equ_cata,#equ_class,#equ_instance{
+			padding-right: 0px;
+			li{
+				position: relative;
+				&:hover{
+						.remove{
+							display: inline-block;
+						}
+				}
+				a{
+					min-height: 20px;
+					
+					.remove{
+						position: absolute;
+						right: 0;
+						display: none;
+						line-height: 20px;
+						&:hover{
+							color: red;
+						}
+					}
+				}
+			}
+		}
+	}
+	#equ_class_container,#equ_instance_container{
+		display: none;
+	}
+}
+#show_detail{
+	display: none;
+	header{
+		.title{
+			float: left;
+		}
+		.close{
+			float: right;
+		}
+	}
+	.onmaintain,.isscrap{
+		display: none;
+	}
+	.show_detail{
+/*		margin-left:-20px;
+*/	}
+}
+#detail,#detail_log table,#scrap_log table{
+	background: #fff;
+}
+.detail_control{
+	a{
+		float: right;
+		margin-left: 10px;
+	}
+}
+#control_modal{
+	.modal-body{
+		p{
+			span{
+				display: block;
+				float: left;
+				line-height: 30px;
+				width: 100px;
+				margin-left: 30px;
+			}
+		}
+	}
+}
+.search{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	.input-prepend{
+		margin: 0 auto;
+		display: block;
+		width: 170px;
+
+	}
+}
+.search-result{
+	display: none;
+}
+#search-result{
+	list-style: none;
+	li{
+		margin-right:10px;
+		cursor: pointer;
+	}
+}
+#header_nav{
+	a{
+		cursor: pointer;
+	}
+}
+#login-info{
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	display: none;
+}

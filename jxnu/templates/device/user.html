@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+{% block body %}
+{% csrf_token %}
+<table class="table table-bordered table-striped" >
+<thead>
+	<tr>
+		<td>账户名</td>
+		<td>姓名</td>
+		<td>用户组</td>
+		<td>登录时间</td>
+		<td>操作</td>
+	</tr>
+</thead>
+<tbody>
+{% for user in users %}
+	<tr data-id="{{ user.id }}">
+		<td class="username" data-username="{{user.username}}">{{ user.username }}</td>
+		<td>{{ user.first_name }}</td>
+		<td>
+			{%ifequal user.groups.all.0.name "superadmin" %}
+				超级管理员
+			{% endifequal %}
+			{%ifequal user.groups.all.0.name "admin" %}
+				管理员
+			{% endifequal %}
+			{%ifequal user.groups.all.0.name "user" %}
+				用户
+			{% endifequal %}
+		</td>
+		<td>{{ user.last_login }}</td>
+		<td>
+			<a href="{% url "device:edituser" user.id %}">
+				<i class="icon-edit"></i>
+			</a>
+			<a href="" class="remove_user">
+				<i class="icon-remove"></i>
+			</a>
+			<a href="" title="重置密码" class="reset_password">
+				<i class="icon-lock"></i>
+			</a>
+		</td>
+	</tr>
+{% endfor %}
+</tbody>
+</table>
+<script type="text/javascript">
+	seajs.use('jxnu/admin/user.js',function(user){
+		user.listen();
+	});
+</script>
+{% endblock %}

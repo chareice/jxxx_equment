@@ -1,0 +1,471 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1; 
+}
+
+ol, ul {
+  list-style: none; 
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; 
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle; 
+}
+
+q, blockquote {
+  quotes: none; 
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none; 
+}
+
+a img {
+  border: none; 
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block; 
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #333;
+  background-color: #FFF;
+}
+a {
+  color: #08C;
+  text-decoration: none;
+}
+ul, ol {
+  padding: 0;
+  margin: 0 0 10px 25px;
+}
+.container {
+  margin-right: auto;
+  margin-left: auto;
+}
+.container, .navbar-static-top .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+  width: 940px;
+}
+.container:before, .container:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.container:after {
+  clear: both;
+}
+.navbar-fixed-top {
+  top: 0;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  margin-bottom: 0;
+}
+.navbar {
+  margin-bottom: 20px;
+  overflow: visible;
+}
+.navbar-inverse .navbar-inner {
+  background-color: #1B1B1B;
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#222), to(#111));
+  background-image: -webkit-linear-gradient(#222, #111);
+  background-image: -moz-linear-gradient(#222, #111);
+  background-image: -o-linear-gradient(#222, #111);
+  background-image: linear-gradient(#222, #111);
+  background-repeat: repeat-x;
+  border-color: #252525;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff222222',endColorstr='#ff111111',GradientType=0);
+}
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+  -webkit-box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+}
+.navbar-fixed-top .navbar-inner, .navbar-fixed-bottom .navbar-inner {
+  padding-right: 0;
+  padding-left: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+  border-width: 0 0 1px;
+}
+.navbar-inner {
+  min-height: 40px;
+  padding-right: 20px;
+  padding-left: 20px;
+  background-color: #FAFAFA;
+  background-image: -moz-linear-gradient(top,#fff,#f2f2f2);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#FFF),to(#F2F2F2));
+  background-image: -webkit-linear-gradient(top,#FFF,#F2F2F2);
+  background-image: -o-linear-gradient(top,#fff,#f2f2f2);
+  background-image: linear-gradient(to bottom,#FFF,#F2F2F2);
+  background-repeat: repeat-x;
+  border: 1px solid #D4D4D4;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#fff2f2f2',GradientType=0);
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+}
+.navbar-inner:before, .navbar-inner:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.navbar-inner:after {
+  clear: both;
+}
+.row {
+  margin-left: -20px;
+}
+.row:before, .row:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+.row:after {
+  clear: both;
+}
+.navbar-inverse .brand {
+  color: #999;
+}
+.navbar-inverse .brand, .navbar-inverse .nav>li>a {
+  color: #999;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.navbar .brand {
+  display: block;
+  float: left;
+  padding: 10px 20px 10px;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 200;
+  color: #777;
+  text-shadow: 0 1px 0 #FFF;
+}
+[class*="span"] {
+  float: left;
+  min-height: 1px;
+  margin-left: 20px;
+}
+.span2 {
+  width: 140px;
+}
+.span4 {
+  width: 300px;
+}
+.span10 {
+  width: 780px;
+}
+.span12 {
+width: 940px;
+}
+.nav-collapse.collapse {
+  height: auto;
+  overflow: visible;
+}
+.collapse {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  -webkit-transition: height .35s ease;
+  -moz-transition: height .35s ease;
+  -o-transition: height .35s ease;
+  transition: height .35s ease;
+}
+.navbar .nav {
+  position: relative;
+  left: 0;
+  display: block;
+  float: left;
+  margin: 0 10px 0 0;
+}
+.nav {
+  margin-bottom: 20px;
+  margin-left: 0;
+  list-style: none;
+}
+.navbar .nav>li {
+  float: left;
+}
+.dropup, .dropdown {
+  position: relative;
+}
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #F5F5F5;
+  border: 1px solid #E3E3E3;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #000;
+  text-shadow: 0 1px 0 #FFF;
+  opacity: .2;
+  filter: alpha(opacity=20);
+}
+.nav-header {
+  display: block;
+  padding: 3px 15px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #999;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+}
+.alert-danger, .alert-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border-color: #EED3D7;
+}
+.table-bordered {
+  border: 1px solid #DDD;
+  border-collapse: separate;
+  border-left: 0;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+}
+.nav-list>.active>a, .nav-list>.active>a:hover, .nav-list>.active>a:focus {
+  color: #FFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+  background-color: #08C;
+}
+.nav>li>a:hover, .nav>li>a:focus {
+  text-decoration: none;
+  background-color: #EEE;
+}
+.nav-list>li>a, .nav-list .nav-header {
+  margin-right: -15px;
+  margin-left: -15px;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear .2s,box-shadow linear .2s;
+  -moz-transition: border linear .2s,box-shadow linear .2s;
+  -o-transition: border linear .2s,box-shadow linear .2s;
+  transition: border linear .2s,box-shadow linear .2s;
+}
+.input-prepend .add-on:first-child, .input-prepend .btn:first-child {
+  -webkit-border-radius: 4px 0 0 4px;
+  -moz-border-radius: 4px 0 0 4px;
+  border-radius: 4px 0 0 4px;
+}
+.page {
+  margin-top: 40px;
+}
+.action {
+  background: #FEE;
+  border-radius: 10px;
+}
+.action div {
+  margin: 0 auto;
+  width: 100px;
+  padding: 100px 0;
+}
+#equclasslist {
+  margin-top: 10px;
+}
+#equ_class_id {
+  display: none;
+}
+.controls .tips {
+  line-height: 28px;
+}
+.show #equ_cata_container,
+.show #equ_class_container,
+.show #equ_instance_container {
+  padding: 8px 0px 0px 0px;
+}
+.show #equ_cata_container li a,
+.show #equ_class_container li a,
+.show #equ_instance_container li a {
+  cursor: pointer;
+}
+.show #equ_cata_container #equ_cata,
+.show #equ_class_container #equ_cata,
+.show #equ_instance_container #equ_cata,
+.show #equ_cata_container #equ_class,
+.show #equ_class_container #equ_class,
+.show #equ_instance_container #equ_class,
+.show #equ_cata_container #equ_instance,
+.show #equ_class_container #equ_instance,
+.show #equ_instance_container #equ_instance {
+  padding-right: 0px;
+}
+.show #equ_cata_container #equ_cata li,
+.show #equ_class_container #equ_cata li,
+.show #equ_instance_container #equ_cata li,
+.show #equ_cata_container #equ_class li,
+.show #equ_class_container #equ_class li,
+.show #equ_instance_container #equ_class li,
+.show #equ_cata_container #equ_instance li,
+.show #equ_class_container #equ_instance li,
+.show #equ_instance_container #equ_instance li {
+  position: relative;
+}
+.show #equ_cata_container #equ_cata li:hover .remove,
+.show #equ_class_container #equ_cata li:hover .remove,
+.show #equ_instance_container #equ_cata li:hover .remove,
+.show #equ_cata_container #equ_class li:hover .remove,
+.show #equ_class_container #equ_class li:hover .remove,
+.show #equ_instance_container #equ_class li:hover .remove,
+.show #equ_cata_container #equ_instance li:hover .remove,
+.show #equ_class_container #equ_instance li:hover .remove,
+.show #equ_instance_container #equ_instance li:hover .remove {
+  display: inline-block;
+}
+.show #equ_cata_container #equ_cata li a,
+.show #equ_class_container #equ_cata li a,
+.show #equ_instance_container #equ_cata li a,
+.show #equ_cata_container #equ_class li a,
+.show #equ_class_container #equ_class li a,
+.show #equ_instance_container #equ_class li a,
+.show #equ_cata_container #equ_instance li a,
+.show #equ_class_container #equ_instance li a,
+.show #equ_instance_container #equ_instance li a {
+  min-height: 20px;
+}
+.show #equ_cata_container #equ_cata li a .remove,
+.show #equ_class_container #equ_cata li a .remove,
+.show #equ_instance_container #equ_cata li a .remove,
+.show #equ_cata_container #equ_class li a .remove,
+.show #equ_class_container #equ_class li a .remove,
+.show #equ_instance_container #equ_class li a .remove,
+.show #equ_cata_container #equ_instance li a .remove,
+.show #equ_class_container #equ_instance li a .remove,
+.show #equ_instance_container #equ_instance li a .remove {
+  position: absolute;
+  right: 0;
+  display: none;
+  line-height: 20px;
+}
+.show #equ_cata_container #equ_cata li a .remove:hover,
+.show #equ_class_container #equ_cata li a .remove:hover,
+.show #equ_instance_container #equ_cata li a .remove:hover,
+.show #equ_cata_container #equ_class li a .remove:hover,
+.show #equ_class_container #equ_class li a .remove:hover,
+.show #equ_instance_container #equ_class li a .remove:hover,
+.show #equ_cata_container #equ_instance li a .remove:hover,
+.show #equ_class_container #equ_instance li a .remove:hover,
+.show #equ_instance_container #equ_instance li a .remove:hover {
+  color: red;
+}
+.show #equ_class_container,
+.show #equ_instance_container {
+  display: none;
+}
+#show_detail {
+  display: none;
+}
+#show_detail header .title {
+  float: left;
+}
+#show_detail header .close {
+  float: right;
+}
+#show_detail .onmaintain,
+#show_detail .isscrap {
+  display: none;
+}
+#show_detail .show_detail {
+  /*		margin-left:-20px;
+*/
+}
+#detail,
+#detail_log table,
+#scrap_log table {
+  background: #fff;
+}
+.detail_control a {
+  float: right;
+  margin-left: 10px;
+}
+#control_modal .modal-body p span {
+  display: block;
+  float: left;
+  line-height: 30px;
+  width: 100px;
+  margin-left: 30px;
+}
+.search {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.search .input-prepend {
+  margin: 0 auto;
+  display: block;
+  width: 170px;
+}
+.search-result {
+  display: none;
+}
+#search-result {
+  list-style: none;
+}
+#search-result li {
+  margin-right: 10px;
+  cursor: pointer;
+}
+#header_nav a {
+  cursor: pointer;
+}
+#login-info {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  display: none;
+}

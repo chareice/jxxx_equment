@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<form class="form-horizontal" method="POST" action="{% url 'device:add' 'device'%}">
+  {% csrf_token %}
+	<fieldset>
+    	<legend>添加设备</legend>
+  		<div class="control-group">
+  		  <label class="control-label" for="equcode">所属型号</label>
+  		  <div class="controls">
+          {% if typeList %}
+          <select id="equ_cata">
+              <option value="none">请选择类别</option>
+              {% for cata in cataList %}
+              <option value="{{ cata.id }}">{{ cata.name}}</option>
+              {% endfor %}
+          </select>
+  		    <select name="equ_class_id" id="equ_class_id">
+
+          </select>
+          <span class="help-block"><a href="{% url 'device:add' 'devtype' %}">新增设备型号<i class="icon-plus" title="添加型号"></i></a></span>
+          {% else %}
+            <div class="tips">暂无设备型号，请先添加<a href="/add/equclass"><i class="icon-plus" title="添加型号"></i></a></div>
+          {% endif %}
+  		  </div>
+  		</div>
+
+  		<div class="control-group">
+  		  <label class="control-label" for="equcode">编码</label>
+  		  <div class="controls">
+  		    <input type="text" id="equcode" placeholder="编码" name="code">
+  		  </div>
+  		</div>
+
+      <div class="control-group">
+        <label class="control-label" for="equserial">序列号</label>
+        <div class="controls">
+          <input type="text" id="equserial" placeholder="序列号" name="serial">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" for="equaddtime">购入时间</label>
+        <div class="controls">
+          <input type="text" id="equaddtime" placeholder="购入时间" name="addtime">
+          <span class="help-block">日期格式类似 2013-02-20</span>
+        </div>
+      </div>
+      
+       <div class="control-group">
+        <label class="control-label" for="equplace">存放地点</label>
+        <div class="controls">
+          <input type="text" id="equplace" placeholder="存放地点" name="place">
+        </div>
+      </div>
+
+       <div class="control-group">
+        <label class="control-label" for="equmanager">管理人</label>
+        <div class="controls">
+          <input type="text" id="equmanager" placeholder="管理人" name="manager">
+        </div>
+      </div>
+
+      <div class="control-group">
+        <div class="controls">
+          <button type="submit" class="btn">提交</button>
+        </div>
+      </div>
+
+  	</fieldset>
+</form>
+<script type="text/javascript">
+  var classData=[
+  {% for cata in typeList %}
+    {id:"{{cata.id}}",model:"{{cata.dev_cata.id}}",pattern:"{{cata.name}}"},
+  {% endfor %}
+  ]
+</script>
+<script type="text/javascript">
+seajs.use('jxnu/admin/adddevice',function(a){
+	a.listen(classData);
+});
+</script>
+{% endblock %}
